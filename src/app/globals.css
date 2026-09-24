@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    --font-hind-siliguri: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+    --font-playfair: 'Playfair Display', Georgia, serif;
+  }
+
+  body {
+    @apply bg-[#fffdfa] text-stone-900 antialiased font-bangla selection:bg-amber-100 selection:text-amber-900;
+  }
+}
+
+@layer components {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="number"],
+  select,
+  textarea {
+    @apply transition-all duration-200 border border-amber-200/90 bg-[#fffdfa] rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-400/40 focus:outline-none shadow-xs;
+  }
+}
+
+/* Luxury Royal Button Style */
+.btn-shimmer {
+  background-color: #4c0519;
+  background-size: 220% 100%;
+  background-image: linear-gradient(
+    95deg,
+    #4c0519 0%,
+    #881337 25%,
+    #b45309 50%,
+    #881337 75%,
+    #4c0519 100%
+  );
+  box-shadow: 0 4px 14px -2px rgba(76, 5, 25, 0.4), 0 0 0 1px rgba(217, 119, 6, 0.35);
+  transition: all 0.35s ease-out;
+}
+
+.btn-shimmer:hover {
+  background-position: 100% 0;
+  box-shadow: 0 8px 22px -4px rgba(76, 5, 25, 0.5), 0 0 0 1.5px rgba(245, 158, 11, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-shimmer:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px -1px rgba(76, 5, 25, 0.4);
+}
+
+/* Secondary Royal Gold Button */
+.btn-royal-gold {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #4c0519;
+  border: 1px solid rgba(217, 119, 6, 0.4);
+  box-shadow: 0 2px 8px -1px rgba(217, 119, 6, 0.2);
+  transition: all 0.25s ease;
+}
+
+.btn-royal-gold:hover {
+  background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%);
+  box-shadow: 0 6px 16px -2px rgba(217, 119, 6, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #92400e 0%, #b45309 35%, #d97706 70%, #78350f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Royal Crimson & Gold Gradient (Refined & Dignified) */
+.text-royal-gradient {
+  background: linear-gradient(135deg, #4c0519 0%, #881337 40%, #b45309 85%, #60071e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Matrimonial Motif Pattern Background */
+.bg-matrimonial-pattern {
+  background-color: #fffdfa;
+  background-image: radial-gradient(#ca8a04 0.75px, transparent 0.75px), radial-gradient(#be123c 0.75px, #fffdfa 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  background-opacity: 0.03;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fbf8f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2d7c5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ca8a04;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print Specific Rules */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #biodata-render-target, #biodata-render-target * {
+    visibility: visible;
+  }
+  #biodata-render-target {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+  tr, .print-avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+}
