@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Crown, ShieldCheck, Lock, Sparkles, HeartHandshake } from 'lucide-react';
+import { Crown, ShieldCheck, Lock, Sparkles, HeartHandshake, Briefcase, ExternalLink } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -149,8 +149,34 @@ export const Footer: React.FC = () => {
 
         </div>
 
+        {/* Cross-Platform Partner: BanglaCV.net for job CVs */}
+        <div className="my-8 p-4 rounded-2xl bg-brand-950/70 border border-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-center sm:text-left">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+              <Briefcase className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-stone-200">
+                চাকরি বা ক্যারিয়ারের জন্য প্রফেশনাল সিভি খুঁজছেন?
+              </p>
+              <p className="text-xs text-stone-400">
+                বাংলাদেশের চাকরিপ্রার্থীদের জন্য আধুনিক ও ১০০% ফ্রি জীবনবৃত্তান্ত মেকার
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://www.banglacv.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600/90 hover:bg-emerald-600 text-white font-semibold text-xs transition-colors shadow-md hover:shadow-emerald-500/20 shrink-0"
+          >
+            <span>BanglaCV.net এ সিভি তৈরি করুন</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        </div>
+
         {/* Bottom copyright & links */}
-        <div className="mt-8 pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
           <p>© {new Date().getFullYear()} BiyePorichoy.com (বিয়েপরিচয়)। সর্বস্বত্ব সংরক্ষিত।</p>
           <div className="flex items-center gap-5 text-stone-400">
             <Link href="/privacy" className="hover:text-amber-300 transition">গোপনীয়তা নীতি</Link>
