@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Hind_Siliguri, Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
@@ -55,6 +56,22 @@ export default function RootLayout({
   return (
     <html lang="bn" className={`${hindSiliguri.variable} ${inter.variable} ${playfair.variable}`}>
       <body className="flex flex-col min-h-screen">
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NQW76WR1TV"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-NQW76WR1TV');
+          `}
+        </Script>
+
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
